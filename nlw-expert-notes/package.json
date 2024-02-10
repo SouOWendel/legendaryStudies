@@ -3,7 +3,7 @@
   "description": "Project for NLW Rocketseat event",
   "author": "Wendel Henrique <souowendel@gmail.com>",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.1",
   "type": "module",
   "repository": {
     "type": "git",
