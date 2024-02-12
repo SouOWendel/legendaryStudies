@@ -12,7 +12,12 @@ interface Note {
 
 export function App() {
 	// The notes has array format!
-	const [notes, setNotes] = useState<Note[]>([]);
+	const [notes, setNotes] = useState<Note[]>(() => {
+		const notesOnStorage = localStorage.getItem('notes');
+
+		// Return local storage notes
+		if (notesOnStorage) return JSON.parse(notesOnStorage);
+	});
 
 	function onNoteCreated(content: string) {
 		const newNote = {
@@ -23,6 +28,7 @@ export function App() {
 		const notesArray = [newNote, ...notes];
 		setNotes(notesArray);
 
+		// Save the note in local storage
 		localStorage.setItem('notes', JSON.stringify(notesArray));
 	}
 
