@@ -14,12 +14,25 @@
  * - Acima de 40 - Obesidade Grave;
  */
 
-const peso = 65; // Em quilos
-const altura = 1.65; // Em centimetros
-const imc = peso / altura ** 2; // Ou Math.pow(altura, 2);
-console.log(imc);
-if (imc < 18.5) console.log('Abaixo do peso com IMC:', imc);
-else if (imc >= 18.5 && 25 >= imc) console.log('Peso normal com IMC:', imc);
-else if (imc > 25 && 30 >= imc) console.log('Acima do peso com IMC:', imc);
-else if (imc > 30 && 40 >= imc) console.log('Obeso com IMC:', imc);
-else if (imc > 40) console.log('Obesidade grave com IMC:', imc);
+// Função auxiliar de cálculo de IMC
+function calcIMC(peso, altura) {
+	return peso / altura ** 2;
+}
+
+// Função auxiliar que classifica o IMC
+function classIMC(imc) {
+	imc = imc.toFixed(2);
+	if (imc < 18.5) return 'Abaixo do peso com IMC: ' + imc;
+	else if (imc >= 18.5 && 25 >= imc) return 'Peso normal com IMC: ' + imc;
+	else if (imc > 25 && 30 >= imc) return 'Acima do peso com IMC: ' + imc;
+	else if (imc > 30 && 40 >= imc) return 'Obeso com IMC: ' + imc;
+	else if (imc > 40) return 'Obesidade grave com IMC: ' + imc;
+}
+
+// Função principal e imediatamente invocada
+(function () {
+	const peso = 65; // Em quilos
+	const altura = 1.65; // Em centimetros
+	const imc = calcIMC(peso, altura); // Ou Math.pow(altura, 2);
+	console.log(classIMC(imc));
+})();

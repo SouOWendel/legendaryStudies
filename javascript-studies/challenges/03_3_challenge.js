@@ -11,15 +11,29 @@
  * 4 - Acima de duas vezes, preço normal de etiqueta mais juros de 10%;
  */
 
-const produtoPreco = 10;
-const codigoPagamento = 1;
+const produtoPreco = 100;
+const codigoPagamento = 4;
+
+function aplicarDesconto(preco, porcentagemDoPreco) {
+	console.log((porcentagemDoPreco + 100) / 100);
+	return (preco * (porcentagemDoPreco / 100)).toFixed(2);
+}
 
 if (codigoPagamento === 1)
-	console.log('Pagamento no débito, o valor a pagar é:', produtoPreco * 0.9);
+	console.log(
+		'Pagamento no débito, o valor a pagar é:',
+		aplicarDesconto(produtoPreco, 90),
+	);
 else if (codigoPagamento === 2)
-	console.log('Pagamento a vista, o valor a pagar é:', produtoPreco * 0.85);
+	console.log(
+		'Pagamento a vista, o valor a pagar é:',
+		aplicarDesconto(produtoPreco, 85),
+	);
 else if (codigoPagamento === 3)
 	console.log('Parcelando em 2x, o valor total a pagar é:', produtoPreco);
 else if (codigoPagamento === 4)
-	console.log('Parcelando em +3x, o valor a pagar é:', produtoPreco * 1.1);
+	console.log(
+		'Parcelando em 3x, o valor a pagar é:',
+		aplicarDesconto(produtoPreco, 110),
+	);
 else console.log('Forma de pagamento seleciona é invalida!');
