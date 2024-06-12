@@ -1,0 +1,22 @@
+# Importação e Exportação
+
+São fundamentais para modularidade e organização de código. Isso permite que os
+códigos sejam reutilizaveis, a organização seja aprimorada e os conceitos separados.
+
+## Object Destructuring
+
+Esta é uma forma de extrair valores de um objeto de forma concisa.
+
+```javascript
+const person = { name: 'Alice', age: 30 };
+const { name } = person; // Extracts only the name property
+console.log(name); // Output: "Alice"
+```
+
+Também é possível definir valores padrão caso não aja a propriedade.
+
+```javascript
+const { name = 'Anonymous', city } = person;
+console.log(name); // Output: "Alice" (since name exists)
+console.log(city); // Output: undefined (city doesn't exist)
+```
