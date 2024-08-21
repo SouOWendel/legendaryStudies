@@ -1,3 +1,6 @@
+<a href="https://www.linkedin.com/in/wendel-henrique/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://mail.google.com/mail/u/0/?fs=1&to=souowendel@gmail.com&su=Enquiry&tf=cm" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
 # Sobre o que é?
 Um projeto de Pokedex utilizando JavaScript para treino de requisições de API usando o protocolo cliente e servidor. O foco
 deste projeto é entender o protocolo HTTP e fazer o uso do mesmo utilizando apenas a linguagem de programação.
@@ -24,12 +27,15 @@ rede tem acesso também a sua aplicação, facilitando a criação de aplicativo
 em responsividade.
 
 ## Opções mais tecnológicas
-- ViteJS
+- ViteJS: Em breve mais detalhes.
 
 # Algumas anotações de JavaScript
-Window
-Document
-## Map
+## O que é "Window" dentro do navegador?
+Em breve...
+## O que é "Document" dentro do navegador?
+Em breve...
+## O que é a função Map?
+Em breve...
 
 # Como funciona o protocolo HTTP?
 É um protocolo cliente e servidor, por exemplo, o pedido é feito, processado e depois respondido.
