@@ -1,5 +1,19 @@
 const pokeApi = {};
 
+function convertPokeApiDetailToPokemon(pokeDetail) {
+	const pokemon = new Pokemon();
+	pokemon.name = pokeDetail.name;
+	pokemon.pokeNumber = pokeDetail.id;
+
+	const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
+	[pokemon.type] = types;
+	pokemon.types = types;
+
+	pokemon.img = pokeDetail.sprites.other.dream_world.front_default;
+
+	return pokemon;
+}
+
 /**
 	 * O função Fetch para requisição de uma Promise e todo o seu tratamento.
 	 * Feita a requisição, o método THEN é chamado juntamente a sua resposta
@@ -27,7 +41,9 @@ pokeApi.getPokemons = async (offset=0, limit=10) => {
 };
 
 pokeApi.getPokemonDetail = async (pokemon) => {
-	return fetch(pokemon.url).then((response) => response.json());
+	return fetch(pokemon.url)
+		.then((response) => response.json())
+		.then(convertPokeApiDetailToPokemon);
 };
 
 // Formato anterior de requisição da API
