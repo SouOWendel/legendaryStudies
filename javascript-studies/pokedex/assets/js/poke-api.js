@@ -15,13 +15,22 @@ pokeApi.getPokemons = async (offset=0, limit=10) => {
 	try {
 		const response = await fetch(url);
 		if(!response.ok) throw new Error('Resposta de conexão não está OK!');
-		const jsonBody = await response.json();
-		return jsonBody.results;
+		let pokemonJson = await response.json();
+		pokemonJson = pokemonJson.results;
+
+		let pokemonDetailsUrl = pokemonJson.map(pokeApi.getPokemonDetail);
+		const pokemonDetails = await Promise.all(pokemonDetailsUrl);
+		return pokemonDetails;
 	} catch (error) {
 		return console.error(error);
 	}
 };
 
+pokeApi.getPokemonDetail = async (pokemon) => {
+	return fetch(pokemon.url).then((response) => response.json());
+};
+
+// Formato anterior de requisição da API
 // fetch(url)
 // 	.then((response) => response.json())
 // 	.then((jsonBody) => jsonBody.results)
