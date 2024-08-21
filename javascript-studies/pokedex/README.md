@@ -4,6 +4,7 @@
 # Sobre o que é?
 Um projeto de Pokedex utilizando JavaScript para treino de requisições de API usando o protocolo cliente e servidor. O foco
 deste projeto é entender o protocolo HTTP e fazer o uso do mesmo utilizando apenas a linguagem de programação.
+![image](https://github.com/user-attachments/assets/7f0cf6c6-a92e-410f-8453-4862907b8142)
 
 # Abordagem de Mobile First
 Neste projeto é utilizado o Mobile First, uma abordagem de design e desenvolvimento web que prioriza a experi~encia do
