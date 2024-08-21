@@ -2,7 +2,8 @@ const loadMoreButton = document.getElementById('loadMoreButton');
 const pokemonOl = document.getElementById('pokemonList');
 const pagination = {
 	limit: 5,
-	offset: 0
+	offset: 0,
+	maxRecords: 151 // To load just 151 pokemons (first generation)
 };
 
 function loadPokemonItems(offset, limit) {
@@ -26,5 +27,13 @@ loadPokemonItems(pagination.offset, pagination.limit);
 
 loadMoreButton.addEventListener('click', () => {
 	pagination.offset += pagination.limit;
-	loadPokemonItems(pagination.offset, pagination.limit);
+	const qtdRecordNexPage = pagination.offset + pagination.limit;
+
+	if (qtdRecordNexPage >= pagination.maxRecords) {
+		const newLimit = pagination.maxRecords - pagination.offset;
+		loadPokemonItems(pagination.offset, newLimit);
+		loadMoreButton.parentElement.removeChild(loadMoreButton);
+	} else {
+		loadPokemonItems(pagination.offset, pagination.limit);
+	}
 });
